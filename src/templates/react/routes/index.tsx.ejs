@@ -1,0 +1,18 @@
+import React, { FC } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Home, Login } from '~/scenes';
+import PrivateRoute from './private.route';
+import RouterProvider from './provider';
+import PublicRoute from './public.route';
+import { Path } from './routes.path';
+
+const NavigationApp: FC = () => (
+  <Routes>
+    <Route path={Path.HOME} element={<PrivateRoute render={<Home />} />} />
+    <Route path={Path.LOGIN} element={<PublicRoute render={<Login />} />} />
+  </Routes>
+);
+
+export { RouterProvider };
+
+export default NavigationApp;

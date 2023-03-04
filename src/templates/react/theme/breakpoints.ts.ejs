@@ -1,0 +1,35 @@
+const screenWidth = window.innerWidth;
+const screenHeight = window.innerHeight;
+
+export const sizes = {
+  mobile: '480px',
+  tablet: '768px',
+  desktop: '1024px',
+  xs: '480px',
+  sm: '576px',
+  md: '768px',
+  lg: '992px',
+  xl: '1200px',
+  xxl: '1600px',
+};
+
+export const breakpoints = {
+  inMobile: `(max-width: ${sizes.tablet})`,
+  inTablet: `(min-width: ${sizes.tablet}) and (max-width: ${sizes.desktop})`,
+  inDesktop: `(min-width: ${sizes.desktop})`,
+  inMobileAndTablet: `(max-width: ${sizes.desktop})`,
+  inSmallMobile: `(min-width: ${sizes.xs}) and (max-width: ${sizes.tablet})`,
+  inExtraSmallMobile: `(max-width: ${sizes.xs})`,
+};
+
+const toInt = (value: string): number => value.replace(/\D/g, '') as unknown as number;
+
+export const device = {
+  isMobile: toInt(sizes.tablet) >= screenWidth,
+  isTablet:
+    toInt(sizes.tablet) > screenWidth
+    && toInt(sizes.desktop) < screenWidth,
+  isDesktop: toInt(sizes.desktop) >= screenWidth,
+};
+
+export { screenHeight, screenWidth };

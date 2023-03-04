@@ -1,0 +1,33 @@
+import React, { FC } from 'react';
+import { Path } from '~/routes/routes.path';
+import { Storage } from '~/services';
+import { useStores } from '~/utils';
+import { Section, Image, Button } from './login.styles';
+
+type Props = {};
+
+const Login: FC<Props> = () => {
+  const { routing } = useStores();
+
+  const toHome = () => {
+    routing.push(Path.HOME);
+  };
+
+  const onLogin = () => {
+    Storage.setToken('token');
+    routing.push(Path.HOME);
+  };
+
+  return (
+    <Section>
+      <Image src="https://user-images.githubusercontent.com/44801113/221214966-568bd14f-fb9b-441a-bf74-c40974f07184.png" />
+
+      <Button onClick={onLogin} type="button">
+        Acessar area privada
+      </Button>
+
+    </Section>
+  );
+};
+
+export default Login;
