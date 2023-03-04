@@ -1,0 +1,20 @@
+/* eslint-disable arrow-body-style */
+/* eslint-disable operator-linebreak */
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable indent */
+/* eslint-disable no-confusing-arrow */
+import { get } from 'lodash';
+
+export const ifStyle =
+  (prop: any) =>
+  (truthy: any, falsy: any = null) =>
+  (props: { [x: string]: any }): any =>
+    props[prop] ? truthy : falsy;
+
+export const getTheme =
+  (themeProp: any) =>
+  ({ theme }: any): string | number | null => {
+    return get(theme, themeProp) || null;
+  };
+
+export const pxToRem = (pixels: number, baseline = 16): string => `${pixels / baseline}rem`;

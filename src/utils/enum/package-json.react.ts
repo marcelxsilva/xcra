@@ -1,0 +1,40 @@
+export default {
+    dependencies: {
+      "env-cmd": "^10.1.0",
+      "mobx-react-router": "^4.1.0",
+      "react-router-dom": "^6.8.2",
+      "history": "^5.3.0",
+      "mobx-persist": "^0.4.1",
+      "mobx": "6.3.2",
+      "mobx-react": "^7.1.0",
+      "axios": "^0.21.4",
+      "styled-components": "^5.3.1",
+      "lodash": "^4.17.21"
+  },
+    devDependencies: {
+        "@typescript-eslint/eslint-plugin": "^5.0.0",
+        "@typescript-eslint/parser": "^5.53.0",
+        "babel-plugin-root-import": "^6.6.0",
+        "customize-cra": "^1.0.0",
+        "eslint": "^8.0.1",
+        "eslint-config-airbnb": "^18.2.1",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
+        "eslint-plugin-import": "^2.25.2",
+        "eslint-plugin-prettier": "^4.2.1",
+        "prettier": "^2.8.4",
+        "react-app-rewired": "^2.2.1",
+        "tslint": "^6.1.3",
+        "typescript": "*",
+        "@types/styled-components": "^5.1.14",
+        "@types/lodash": "^4.14.175",
+        "reactotron-react-js": "^3.3.8",
+    },
+    scripts: {
+        "dev": "env-cmd -f .env.dev yarn react-app-rewired start",
+        "prd": "env-cmd -f .env.prd yarn react-app-rewired start",
+        "build:dev": "env-cmd -f .env.dev yarn react-app-rewired build",
+        "build:prd": "env-cmd -f .env.prd yarn react-app-rewired build",
+        "lint": "yarn tslint --project tsconfig.json; eslint '*/**/*.{js,jsx,ts,tsx}' --fix",
+    }
+}

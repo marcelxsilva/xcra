@@ -1,0 +1,8 @@
+export const login = async (credentials: User): Promise<User | null> => {
+  try {
+    // const { data } = await request.post('/auth', credentials);
+    return credentials;
+  } catch (error) {
+    return null;
+  }
+};

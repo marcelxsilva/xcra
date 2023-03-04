@@ -1,0 +1,17 @@
+const TOKEN = 'token';
+
+const Storage = window.localStorage;
+
+export default class StorageService {
+  static clearStorage(): void {
+    Storage.clear();
+  }
+
+  static getToken(): string | null {
+    return Storage.getItem(TOKEN);
+  }
+
+  static setToken(token: string): void {
+    Storage.setItem(TOKEN, token);
+  }
+}

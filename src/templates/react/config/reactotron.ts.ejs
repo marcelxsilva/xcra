@@ -1,0 +1,8 @@
+import Reactotron from 'reactotron-react-js';
+import { REACT_APP_ENV } from '~/utils';
+
+if (REACT_APP_ENV === 'DEV') {
+  Reactotron.configure({
+    name: 'React App',
+  }).connect();
+}

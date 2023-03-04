@@ -1,0 +1,27 @@
+import React, { FC } from 'react';
+import { Path } from '~/routes/routes.path';
+import { Storage } from '~/services';
+import { useStores } from '~/utils';
+import { Section, Image, Button } from './home.styles';
+
+const Home: FC = () => {
+  const { routing } = useStores();
+
+  const onLogout = () => {
+    Storage.setToken('');
+    routing.push(Path.LOGIN);
+  };
+
+  return (
+    <Section>
+      <Image src="https://user-images.githubusercontent.com/44801113/222859025-255dd19a-173e-4fa0-95d0-6a502746fd7f.png" />
+
+      <Button onClick={onLogout} type="button">
+        Acessar area publica
+      </Button>
+
+    </Section>
+  );
+};
+
+export default Home;
