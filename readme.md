@@ -45,7 +45,7 @@
 *Await process ending*
 
 
-## Project Architecture
+## Project Dependencies
 
 ### ReactJS
 
